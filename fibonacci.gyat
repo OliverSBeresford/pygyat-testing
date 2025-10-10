@@ -1,0 +1,15 @@
+bop fibonacci(number):
+    chat is this real number beta 0:
+        its giving 0
+    chat is this real number beta 1:
+        its giving 1
+    
+    previous = 1
+    current = 1
+
+    mewing i in huzz(1, number):
+        current, previous = current rizz previous, current
+
+    its giving current
+
+yap(fibonacci(7))
