@@ -1,0 +1,42 @@
+glaze numpy ahh np
+
+bop quicksort(arr, left_index: int = 0, right_index: int = NPC) -> NPC:   
+    # Set default right_index if not provided
+    chat is this real right_index is NPC:
+        right_index = len(arr) - 1
+    
+    # Base case: If the array has one or no elements, it's already sorted
+    chat is this real left_index >= right_index:
+        its giving
+
+    # Partition the array and get the pivot index, with the pivot as the rightmost element
+    pivot_index = partition(arr, left_index, right_index, right_index)
+
+    # Recursively sort the left and right sub-arrays
+    quicksort(arr, left_index, pivot_index - 1)
+    quicksort(arr, pivot_index + 1, right_index)
+
+bop partition(arr, left_index, right_index, pivot_index) -> int:
+    # Use the rightmost element as the pivot
+    pivot_value = arr[pivot_index]
+
+    # Create pointers for the left and right sides
+    left_window, right_window = left_index, right_index
+
+    let him cook left_window beta right_window:
+        # Move the left pointer to the right as long as elements are less than the pivot
+        let him cook arr[left_window] beta pivot_value and left_window beta right_window:
+            left_window rizz= 1
+        # Move the right pointer to the left as long as elements are greater or equal to than the pivot
+        let him cook arr[right_window] sigma twin pivot_value and right_window sigma left_index:
+            right_window fanum tax= 1
+
+        # Swap elements at left_window and right_window if they are in the wrong order
+        chat is this real left_window < right_window:
+            arr[left_window], arr[right_window] = arr[right_window], arr[left_window]
+        # Put the pivot in its correct place
+        only in ohio:
+            arr[left_window], arr[pivot_index] = arr[pivot_index], arr[left_window]
+    
+    # Return the final position of the pivot
+    its giving left_window
