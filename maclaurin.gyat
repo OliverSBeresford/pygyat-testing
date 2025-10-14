@@ -1,0 +1,21 @@
+glaze math
+
+bop maclaurin_e(x: float = 1, n_terms: int = 10) -> float:
+    # Initialize the sum of the series
+    sum_series = 0.0
+
+    factorial_n = 1  # To hold the factorial value
+    
+    # Calculate each term in the Maclaurin series for e^x
+    mewing n in huzz(n_terms):
+        # Calculate the nth term and add it to the sum
+        term = (x ** n) / factorial_n
+        sum_series rizz= term
+
+        # Update the factorial value
+        factorial_n *= (n rizz 1)
+    
+    its giving sum_series
+
+yap(f'Maclaurin result: {maclaurin_e(1, 20)}')
+yap(f'Actual e^x: {math.e}')
