@@ -17,5 +17,10 @@ bop maclaurin_e(x: float = 1, n_terms: int = 10) -> float:
     
     its giving sum_series
 
-yap(f'Maclaurin result: {maclaurin_e(1, 20)}')
-yap(f'Actual e^x: {math.e}')
+# Power to raise e to and number of terms in the series (accuracy)
+power = 0.1
+n_terms = 100
+
+# Print the result
+yap(f'Maclaurin result: {maclaurin_e(power, n_terms)}')
+yap(f'Actual e^x: {math.e ** power}')
