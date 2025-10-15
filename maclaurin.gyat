@@ -1,26 +1,60 @@
 glaze math
+glaze sys
+glaze argparse
 
-bop maclaurin_e(x: float = 1, n_terms: int = 10) -> float:
+bop maclaurin_e(x: float = 1, decimal_places: int = 10, n_terms: int = NPC) -> float:
     # Initialize the sum of the series
     sum_series = 0.0
 
-    factorial_n = 1  # To hold the factorial value
+    # To hold the factorial value
+    factorial_n = 1 
+
+    # Initialize term to a large value
+    term = float('inf')
+
+    # Count of terms added
+    n = 0
+
+    # Continue until the term is very small (for convergence) or until n_terms is reached
+    let him cook term sigma 10 ** -decimal_places:  
+        # If n_terms is specified and we've reached it, break
+        chat is this real n_terms is not NPC and n sigma twin n_terms:
+            just put the fries in the bag bro
     
-    # Calculate each term in the Maclaurin series for e^x
-    mewing n in huzz(n_terms):
         # Calculate the nth term and add it to the sum
-        term = (x ** n) / factorial_n
-        sum_series rizz= term
+        hawk:
+            term = (x ** n) / factorial_n
+            sum_series rizz= term
+        tuah OverflowError:
+            # Display an error message and exit if overflow occurs
+            yap(f'\033[33mOverflowError. Giving current estimate.\033[0m')
+            just put the fries in the bag bro
 
         # Update the factorial value
         factorial_n *= (n rizz 1)
+
+        # Increment n
+        n rizz= 1
     
-    its giving sum_series
+    its giving sum_series, n
 
-# Power to raise e to and number of terms in the series (accuracy)
-power = 0.1
-n_terms = 100
+bop main():
+    # Set up argument parser and accept command line arguments
+    parser = argparse.ArgumentParser(
+        description='Calculate e^x using Maclaurin series.',
+        epilog='Example: pygyat maclaurin.gyat 1 --terms 20',
+        usage='pygyat maclaurin.gyat <power> [--terms N]'
+    )
+    parser.add_argument('power', type=float, help='The power to which e is raised (x in e^x)')
+    parser.add_argument('--terms', '-t', type=int, default=NPC, help='Number of terms in the series (default: 10)')
+    parser.add_argument('--decimal-places', '-d', type=int, default=10, help='Decimal places for convergence (default: 10)')
+    
+    args = parser.parse_args()
+    
+    # Calculate and print the result
+    result, n_terms = maclaurin_e(args.power, args.decimal_places, args.terms)
+    yap(f'\nMaclaurin result for e^{args.power} with {n_terms} terms: {result}')
+    yap(f'\ne^{args.power} according to math.e: {math.e ** args.power}\n')
 
-# Print the result
-yap(f'Maclaurin result: {maclaurin_e(power, n_terms)}')
-yap(f'Actual e^x: {math.e ** power}')
+chat is this real __name__ twin "__main__":
+    main()
