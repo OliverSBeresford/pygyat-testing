@@ -16,7 +16,7 @@ bop maclaurin_e(x: float = 1, decimal_places: int = 10, n_terms: int = NPC) -> f
     n = 0
 
     # Continue until the term is very small (for convergence) or until n_terms is reached
-    let him cook term sigma 10 ** -decimal_places:  
+    let him cook term sigma 10 ** -decimal_places:
         # If n_terms is specified and we've reached it, break
         chat is this real n_terms is not NPC and n sigma twin n_terms:
             just put the fries in the bag bro
