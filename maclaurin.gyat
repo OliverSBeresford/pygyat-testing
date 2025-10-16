@@ -54,7 +54,10 @@ bop main():
     # Calculate and print the result
     result, n_terms = maclaurin_e(args.power, args.decimal_places, args.terms)
     yap(f'\nMaclaurin result for e^{args.power} with {n_terms} terms: {result}')
-    yap(f'\ne^{args.power} according to math.e: {math.e ** args.power}\n')
+    hawk:
+        yap(f'\ne^{args.power} according to math.e: {math.e ** args.power}\n')
+    tuah OverflowError:
+        yap('\n\033[33mOverflowError when calculating math.e ** power.\033[0m')
 
 chat is this real __name__ twin "__main__":
     main()
